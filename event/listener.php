@@ -140,14 +140,14 @@ class listener implements EventSubscriberInterface
 	 */
 	public function user_setup($event)
 	{
-			// Need to ensure the flags are cached on page load
-			$this->nationalflags->cache_flags();
-			$lang_set_ext = $event['lang_set_ext'];
-			$lang_set_ext[] = array(
-				'ext_name' => 'rmcgirr83/nationalflags',
-				'lang_set' => 'common',
-			);
-			$event['lang_set_ext'] = $lang_set_ext;
+		// Need to ensure the flags are cached on page load
+		$this->nationalflags->cache_flags();
+		$lang_set_ext = $event['lang_set_ext'];
+		$lang_set_ext[] = array(
+			'ext_name' => 'rmcgirr83/nationalflags',
+			'lang_set' => 'common',
+		);
+		$event['lang_set_ext'] = $lang_set_ext;
 	}
 
 	/**
@@ -502,7 +502,9 @@ class listener implements EventSubscriberInterface
 
 		if ($user_flag)
 		{
-			$flag_name = $flags[$user_flag]['flag_name'];
+			$flag_name = isset($this->user->lang[strtoupper(str_replace(" ", "_", $flags[$user_flag]['flag_name']))]) ? html_entity_decode($this->user->lang[strtoupper(str_replace(" ", "_", $flags[$user_flag]['flag_name']))]) : html_entity_decode($flags[$user_flag]['flag_name']);
+
+			$flag_name = $flag_name;
 			$flag_image = $flags[$user_flag]['flag_image'];
 		}
 
