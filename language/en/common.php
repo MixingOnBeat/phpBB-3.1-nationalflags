@@ -284,7 +284,7 @@ $lang = array_merge($lang, array(
 	'SOUTH_SUDAN' => 'South Sudan',
 	'FRENCH_SOUTHERN_TERRITORIES' => 'French Southern Territories',
 	'TOKELAU' => 'Tokelau',
-	'WALLIS_AND_FUTUNA ISLANDS' => 'Wallis and Futuna Islands',
+	'WALLIS_AND_FUTUNA_ISLANDS' => 'Wallis and Futuna Islands',
 	'MAYOTTE' => 'Mayotte',
 	'SERBIA' => 'Serbia',
 ));
